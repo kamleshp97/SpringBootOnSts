@@ -52,21 +52,23 @@ public class SpringBootOnStsApplication {
 		 * dataForUpdate2 = dataForUpdate.get(); dataForUpdate2.setAddress("virar");
 		 * bean.save(dataForUpdate2);
 		 */
-		System.out.println("--------------------- customm query finder ------------------------");
-		List<User> findByName1 = bean.findByName("manish");
-		System.out.println(findByName1);
-		
-		List<User> findByNameAndAddress = bean.findByNameAndAddress("manish","byculla");
-		System.out.println(findByNameAndAddress);
-		
-		System.out.println("-------------------- JPQL -----------------------------");
-		List<User> allUser = bean.getAllUser();
-		System.out.println(allUser);
-		
-		List<User> data = bean.getData("manish", "doctor");
-		System.out.println(data);
-		
-		System.out.println(bean.getAllUserNative());
+		/*
+		 * System.out.
+		 * println("--------------------- customm query finder ------------------------"
+		 * ); List<User> findByName1 = bean.findByName("manish");
+		 * System.out.println(findByName1);
+		 * 
+		 * List<User> findByNameAndAddress =
+		 * bean.findByNameAndAddress("manish","byculla");
+		 * System.out.println(findByNameAndAddress);
+		 * 
+		 * System.out.println("-------------------- JPQL -----------------------------"
+		 * ); List<User> allUser = bean.getAllUser(); System.out.println(allUser);
+		 * 
+		 * List<User> data = bean.getData("manish", "doctor"); System.out.println(data);
+		 * 
+		 * System.out.println(bean.getAllUserNative());
+		 */
 	}
 
 }

@@ -15,8 +15,8 @@ public class BookDaoImpl implements BookDao{
 
     private static List<Book> allBooks = new LinkedList<>();
     static{
-         allBooks = Arrays.asList(new Book(1, "Attitude is everything", "Jeff Keller"),
-                new Book(2, "Javascript and JQuery", "Murach"));
+        allBooks.add(new Book(1, "Attitude is everything", "Jeff Keller"));
+        allBooks.add(new Book(2, "Javascript and JQuery", "Murach"));
     }
 
     @Override
@@ -27,6 +27,30 @@ public class BookDaoImpl implements BookDao{
     @Override
     public List<Book> getBook(int id) {
        return allBooks.stream().filter(i -> i.getId() == id).collect(Collectors.toList());
+    }
+
+    @Override
+    public Book addBook(Book book) {
+       allBooks.add(book);
+       return book;
+    }
+
+    @Override
+    public void deleteBook(int id) {
+        List<Book> allData = getBook(id);
+      
+        System.out.println("allData: "+  allData.get(0)); //get index of book into list
+        allBooks.remove(allData.get(0));
+    }
+
+    @Override
+    public Book updateBook(Book book, int id) {
+       List<Book> newBook =  allBooks.stream().filter(f -> f.getId() == id).map(m -> {
+            m.setAuthor("kp");
+            m.setBookname("my life");
+            return m;
+        }).collect(Collectors.toList());
+        return newBook.get(0);
     }
     
 }
