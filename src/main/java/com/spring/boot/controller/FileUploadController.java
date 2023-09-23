@@ -1,7 +1,11 @@
 package com.spring.boot.controller;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -27,6 +31,10 @@ public class FileUploadController {
 			fos.flush();
 			fos.write(fileContent);
 			fos.close();
+			
+			// another way to upload file in single line using nio
+			//Files.copy(multipartFile.getInputStream(), Paths.get(fileUploadingDirectory),StandardCopyOption.REPLACE_EXISTING);
+			
 			status = true;
 		}
 		catch(Exception e) {

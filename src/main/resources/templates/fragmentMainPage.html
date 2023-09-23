@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>fragment Main Page</title>
+</head>
+<body>
+<header th:replace="header::header1"></header>	
+	
+	
+<p>ts main page and in this page we have to add footer as fragmnet:</p>I
+1. using include [include only fragment content] <br>
+2. using insert [insert fragment body] <br>
+3. using replace [replace current host tag with fragment tag] <br>
+<hr>
+
+<footer th:include="footer::footer1"></footer><hr>
+<footer th:insert="footer::footer1"></footer><hr>
+<footer th:replace="footer::footer1"></footer><hr>
+</body>
+</html>

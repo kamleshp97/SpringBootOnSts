@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>First Thymeleaf</title>
+</head>
+<body>
+	<h1>First thymeleaf page</h1>
+	<!-- get value from server  -->
+	<h2 th:text="${name}"></h2>
+	
+	<!-- temporary variable data valid for div in this case  -->	
+	<div th:with="a = 5, b = 10, c = ${surname}" >
+		<h1>value of a = <span th:text="${a}"></span></h1>
+		<h1>value of c = <span th:text="${c}"></span></h1>
+		<h1>sum of a and b = <span th:text="${a+b}"></span></h1>		
+	</div>
+	
+	<!-- funtions -->
+	<h2 th:text="${#strings.toUpperCase(name)}"></h2>
+	<h2 th:text="${#strings.length(age)}"></h2>
+	
+	
+</body>
+</html>

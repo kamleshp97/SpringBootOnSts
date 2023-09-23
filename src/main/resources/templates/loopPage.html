@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Iteration</title>
+</head>
+<body>
+<h1>Loop page</h1>
+<h2>List = <span th:text="${list}"></span></h2>
+<hr>
+<p> Each element of list</p>
+<ol>
+	<li th:each="n : ${list}">
+		<span th:text="${n}"/>
+	</li>
+</ol>
+<hr>
+<p> Each element of list with status</p>
+<p>status :  enables a useful mechanism to keep track of the iteration process via the status variable</p>
+<p>status :  index, count, even/odd, first, last, size</p>
+<ol>
+	<li th:each="n,status : ${list}">
+		<span th:text="${status.index}"/> <!--index of current element-->
+		<span th:text="${status.count}"/> <!--count of current element-->
+		<span th:text="${status.first}"/> <!--boolean : true if first as current element-->
+		<span th:text="${status.last}"/> <!--boolean : true if last as current element-->
+		<span th:text="${status.size}"/> <!--size of list-->
+		<span th:style="${status.odd ? 'font-weight:bold' : ''}"/> <!--even/odd use for styling based on even/odd of boolean value-->
+		<span th:text="${n}"/>
+	</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>dynamic header</title>
+</head>
+<body>
+	<header th:fragment="header1" id = "fragmentTag(name, isLogin)">
+		<div id = "header">
+			<p style="background-color: cadetblue;">
+				<span style="text-align: left;" th:text="${name}"></span> 
+				<span style="float:  right;" th:text="${isLogin} ? 'LOGGED IN' : 'LOGGED OUT'"></span> 
+			</p>
+		</div>
+	</header>
+</body>
+</html>

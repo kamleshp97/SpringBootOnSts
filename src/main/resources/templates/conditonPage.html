@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>conditon page</title>
+</head>
+<body>
+<p>Elive Opeartor(ternary operato)</p>
+<p th:style="${isACTIVE} ? 'color:green' : 'color:red'" 
+	th:text="${isACTIVE} ? 'ACTIVE' : 'INACTIVE'"></p>
+<hr>
+<p>If - unless condtion</p>
+<p th:if="${gender} == 'Male'">Male</p>
+<p th:unless="${gender} == 'Male'">Female</p>
+<hr>
+<p>Switch condtion</p>
+<div th:switch="${#lists.size(list)}">
+	<p th:case="'0'">list is empty</p>
+	<p th:case="'1'">list heve only one element</p>
+	<p th:case="*">list have more than one elements</p>
+</div>
+</body>
+</html>
